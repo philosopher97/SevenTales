@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Gallery</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="annoymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<link href="css/style_1.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="area">
+	<div class="logo">
+			<a href="index.html">
+				<img src="images/logo.png" width="300px" style="margin: 30px 0px" alt="">
+			</a>
+		</div>
+	
+	<div class="carousel">
+		<a class="carousel-item" href="episode1.html"> <img src="images/ep1.png"> </a>
+		<a class="carousel-item" href="episode2.html"> <img src="images/ep2.png"> </a>
+		<a class="carousel-item" href="episode3.html"> <img src="images/ep3.png"> </a>
+		<a class="carousel-item" href="episode4.html"> <img src="images/ep4.png"> </a>
+		<a class="carousel-item" href="episode5.html"> <img src="images/ep5.png"> </a>
+		<a class="carousel-item" href="episode6.html"> <img src="images/ep6.png"> </a>
+		<a class="carousel-item" href="episode7.html"> <img src="images/ep7.png"> </a>
+	</div>
+</div>
+<script>
+$(document).ready(function(){
+	$('.carousel').carousel();
+	
+	var myVar;
+
+	function start(){
+		myVar = setInterval(next,2500);
+		function next () {
+			$('.carousel').carousel('next');
+		}
+	}
+	
+	function stopcarouse1() {
+		clearInterval(myVar);
+	}
+	
+	$('.carousel-item').mouseenter(function(){ stopcarouse1();});
+	$('.carousel-item').mouseleave(function(){ start();});
+	
+	start();
+});
+</script>	
+
+</body>
+</html>
